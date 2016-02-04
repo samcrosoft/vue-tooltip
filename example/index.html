@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue Tooltip Sample</title>
+
+    <link rel="stylesheet" href="../dist/css/tooltip-theme-arrows.css" />
+
+</head>
+<body>
+<style>
+    .red_txt {
+        color: red;
+    }
+</style>
+
+<div id="App">
+    <h1>Mouseover the red text</h1>
+    Lorem ipsum dolor sit amet, consectetur <span v-tooltip position="bottom center"
+                                                  class="red_txt"
+                                                  content="Wow! I am a vue Tooltip">adipisicing</span> elit. Ab error fugit nostrum
+    provident veniam. Beatae delectus
+    dolores ducimus, esse est excepturi laboriosam praesentium, quae quam, quos recusandae repellat rerum veritatis.
+
+    <p>
+        dolores ducimus, esse est excepturi laboriosam praesentium, quae quam, quos recusandae repellat rerum veritatis.
+        <a href="javascript:;" v-tooltip position="top right" class="red_txta" content="Wow! I am a vue Tooltip - Again!">Tooltip on Right Top</a>
+    </p>
+
+</div>
+
+<p>This is a paragraph of text</p>
+
+
+
+<script src="../bower_components/tether/dist/js/tether.min.js"></script>
+<script src="../bower_components/tether-drop/dist/js/drop.min.js"></script>
+<script src="../bower_components/tether-tooltip/dist/js/tooltip.min.js"></script>
+<script src="../bower_components/vue/dist/vue.js"></script>
+<!--include the Vue Tooltip-->
+<script src="../dist/js/vue-tooltip.js"></script>
+<script>
+    new Vue({
+        el: "#App"
+    })
+</script>
+</body>
+</html>

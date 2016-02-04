@@ -1,0 +1,35 @@
+{
+  "name": "vue-tooltip",
+  "version": "0.1.0",
+  "description": "A plugin to implement tooltip using Vue.js",
+  "main": "dist/vue-tooltip.js",
+  "homepage": "https://github.com/samcrosoft/vue-tooltip",
+  "scripts": {
+    "build": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/samcrosoft/vue-tooltip"
+  },
+  "keywords": [
+    "vue",
+    "tooltip",
+    "vue-tooltip",
+    "vue-tool-tip"
+  ],
+  "author": "Samuel Olowofela",
+  "license": "MIT",
+  "devDependencies": {
+    "del": "^1.2.0",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^2.3.1",
+    "gulp-babel": "^5.1.0",
+    "gulp-bower": "0.0.13",
+    "gulp-header": "^1.2.2",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^1.5.1"
+  },
+  "dependencies": {
+    "vue": "^1.0.15"
+  }
+}
