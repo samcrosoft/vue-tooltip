@@ -12,7 +12,10 @@
                 content: this.params.content || "",
                 constrainToWindow: false
             };
-            new Tooltip(oOption);
+            let this.tooltip = new Tooltip(oOption);
+        },
+        unbind() {
+            this.tooltip.destroy();
         }
     };
 
