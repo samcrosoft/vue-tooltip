@@ -1,9 +1,6 @@
-# VueTooltip
+# VueTooltip 2.x
 
-Tooltip plugin implemented for use with Vue.js.
-
-This is a vue.js directive for the tooltip plugin.
-
+Tooltip plugin implemented for use with Vue.js 2.x.
 
 ## Usage
 
@@ -30,7 +27,9 @@ And then insert a link to the vue-tooltip script
 You can insert a tooltip on any element using the tooltip directive
 
 ```html
-<span v-tooltip position="bottom center" content="Wow! I am a vue Tooltip"></span>   
+<tooltip position="bottom center" content="Wow! I am a vue Tooltip">
+    <!--Inner content-->
+</tooltip>   
             
 ```
 
