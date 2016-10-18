@@ -3,25 +3,34 @@
  */
 
 (function (Vue) {
-    let VueToolTipDirective = {
-        params: ['position', 'content'],
-        bind(){
-            let oOption = {
-                target: this.el,
-                position: this.params.position || "top left",
-                content: this.params.content || "",
-                constrainToWindow: false
-            };
-            new Tooltip(oOption);
-        }
+
+    let VueToolTipComponent = {
+      props: [ 'position', 'content' ],
+      render(h) {
+        return h(
+          'span',
+          this.$slots.default
+        );
+      },
+      mounted() {
+        let oOption = {
+          target: this.$el,
+          position: this.position || 'top left',
+          content: this.content || '',
+          constrainToWindow: false
+        };
+        this.tooltip = new Tooltip(oOption);
+      },
+      destroyed() {
+        this.tooltip.destroy();
+      }
     };
 
-
     /*
-     * Install Vue Directive if Vue is available
+     * Install Vue Component if Vue is available
      */
 
     if (typeof Vue !== "undefined") {
-        Vue.directive('tooltip', VueToolTipDirective);
+        Vue.component('tooltip', VueToolTipComponent);
     }
 })(window.Vue);

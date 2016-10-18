@@ -11,24 +11,31 @@
 'use strict';
 
 (function (Vue) {
-    var VueToolTipDirective = {
-        params: ['position', 'content'],
-        bind: function bind() {
-            var oOption = {
-                target: this.el,
-                position: this.params.position || "top left",
-                content: this.params.content || "",
-                constrainToWindow: false
-            };
-            new Tooltip(oOption);
-        }
-    };
 
-    /*
-     * Install Vue Directive if Vue is available
-     */
-
-    if (typeof Vue !== "undefined") {
-        Vue.directive('tooltip', VueToolTipDirective);
+  var VueToolTipComponent = {
+    props: ['position', 'content'],
+    render: function render(h) {
+      return h('span', this.$slots['default']);
+    },
+    mounted: function mounted() {
+      var oOption = {
+        target: this.$el,
+        position: this.position || 'top left',
+        content: this.content || '',
+        constrainToWindow: false
+      };
+      this.tooltip = new Tooltip(oOption);
+    },
+    destroyed: function destroyed() {
+      this.tooltip.destroy();
     }
+  };
+
+  /*
+   * Install Vue Component if Vue is available
+   */
+
+  if (typeof Vue !== "undefined") {
+    Vue.component('tooltip', VueToolTipComponent);
+  }
 })(window.Vue);
