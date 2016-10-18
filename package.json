@@ -30,6 +30,6 @@
     "gulp-uglify": "^1.5.1"
   },
   "dependencies": {
-    "vue": "^1.0.15"
+    "vue": ">=2.0.0"
   }
 }
