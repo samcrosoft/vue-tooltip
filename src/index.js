@@ -5,11 +5,11 @@
 (function (Vue) {
     let VueToolTipDirective = {
         params: ['position', 'content'],
-        bind(){
+        bind(el, binding, vnode){
             let oOption = {
-                target: this.el,
-                position: this.params.position || "top left",
-                content: this.params.content || "",
+                target: el,
+                position: vnode.data.attrs.position || "top left",
+                content: vnode.data.attrs.position || "",
                 constrainToWindow: false
             };
             new Tooltip(oOption);
